@@ -12,6 +12,10 @@
 # next.js
 /.next/
 /out/
+/dist/
+
+# vscode
+.vscode
 
 # production
 /build
