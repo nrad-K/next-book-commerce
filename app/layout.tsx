@@ -1,4 +1,4 @@
-import { Header } from '@/components/header'
+import { Header } from '@/components/common/Header'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
