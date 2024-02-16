@@ -1,6 +1,6 @@
-import { Header } from '@/components/common/Header'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
+import { twMerge } from 'tailwind-merge'
 import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({ subsets: ['latin'] })
@@ -17,8 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={notoSansJP.className}>
-        <Header />
+      <body className={twMerge('h-screen', notoSansJP.className)}>
         {children}
       </body>
     </html>

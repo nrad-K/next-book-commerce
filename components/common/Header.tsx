@@ -7,19 +7,20 @@ import { Combobox } from '@/components/common/Combobox'
 import { TypographyH3 } from '@/components/common/Typography'
 import { AsideCartForm } from '@/components/feature/cart/AsideCartForm'
 import { Button } from '@/components/ui/button'
+import { GENRE } from '@/seeds'
 
 export function Header() {
   return (
     <header className="fixed z-50 flex w-full items-center justify-between bg-white px-6 py-4 shadow">
       <TypographyH3>BOOK COMMERCE</TypographyH3>
       <div className="flex items-center space-x-4">
-        <Combobox />
+        <Combobox genres={GENRE} />
         <nav>
           <Button variant="link">
-            <Link href="#">HOME</Link>
+            <Link href="/">HOME</Link>
           </Button>
           <Button variant="link">
-            <Link href="#">LOGIN</Link>
+            <Link href="/login">LOGIN</Link>
           </Button>
         </nav>
         <AsideCartForm>

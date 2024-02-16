@@ -16,6 +16,12 @@ import { GoStarFill } from 'react-icons/go'
 type Props = Omit<Book, 'content'>
 
 export function BookCard(props: Props) {
+  const calculateDiscount = (
+    originalPrice: number,
+    discountedPrice: number,
+  ) => {
+    return Math.floor(((originalPrice - discountedPrice) / originalPrice) * 100)
+  }
   return (
     <Card className="w-fit shadow">
       <CardHeader className="relative">
@@ -25,9 +31,12 @@ export function BookCard(props: Props) {
           width={180}
           height={180}
         />
-        <Badge className="absolute ml-2" variant="secondary">
-          00% OFF
-        </Badge>
+        {props.specialRetailPrice && (
+          <Badge className="absolute ml-2" variant="secondary">
+            {calculateDiscount(props.retailPrice, props.specialRetailPrice)}%
+            OFF
+          </Badge>
+        )}
       </CardHeader>
       <CardContent>
         <TypographyLarge className="flex items-end">
